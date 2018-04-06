@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14101" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xuS-Ek-v5x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xuS-Ek-v5x">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,23 +19,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RJ7-Rs-QUy">
-                                <rect key="frame" x="135" y="525" width="150" height="3"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8x-yu-4Hc">
-                                <rect key="frame" x="135" y="339" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOX-5a-L5o">
+                                <rect key="frame" x="-1" y="292" width="376" height="83"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RJ7-Rs-QUy">
+                                        <rect key="frame" x="47" y="66" width="282" height="2"/>
+                                    </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8x-yu-4Hc">
+                                        <rect key="frame" x="167" y="15" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="L8x-yu-4Hc" firstAttribute="top" secondItem="yOX-5a-L5o" secondAttribute="top" constant="15" id="7b9-FH-mjv"/>
+                                    <constraint firstItem="L8x-yu-4Hc" firstAttribute="centerX" secondItem="yOX-5a-L5o" secondAttribute="centerX" id="MUU-A7-wLn"/>
+                                    <constraint firstItem="RJ7-Rs-QUy" firstAttribute="width" secondItem="yOX-5a-L5o" secondAttribute="width" multiplier="3:4" id="NdK-He-L3U"/>
+                                    <constraint firstItem="RJ7-Rs-QUy" firstAttribute="centerX" secondItem="yOX-5a-L5o" secondAttribute="centerX" id="Pcq-hp-qhh"/>
+                                    <constraint firstAttribute="bottom" secondItem="RJ7-Rs-QUy" secondAttribute="bottom" constant="15" id="WE4-P2-7gr"/>
+                                    <constraint firstItem="RJ7-Rs-QUy" firstAttribute="top" secondItem="L8x-yu-4Hc" secondAttribute="bottom" constant="30" id="XI1-a4-ZCh"/>
+                                    <constraint firstItem="L8x-yu-4Hc" firstAttribute="centerX" secondItem="yOX-5a-L5o" secondAttribute="centerX" id="kih-y8-YUW"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JOh-TS-fYp" firstAttribute="trailing" secondItem="yOX-5a-L5o" secondAttribute="trailing" id="482-fj-Ad5"/>
+                            <constraint firstItem="yOX-5a-L5o" firstAttribute="centerY" secondItem="MHC-Ef-dni" secondAttribute="centerY" id="Eiu-SJ-NTP"/>
+                            <constraint firstItem="yOX-5a-L5o" firstAttribute="centerX" secondItem="MHC-Ef-dni" secondAttribute="centerX" id="JEF-yd-j46"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JOh-TS-fYp"/>
                     </view>
                     <connections>
                         <outlet property="value" destination="RJ7-Rs-QUy" id="H7n-EE-nOb"/>
+                        <outlet property="valueLabel" destination="L8x-yu-4Hc" id="3qJ-rQ-hRp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXr-na-VGF" userLabel="First Responder" sceneMemberID="firstResponder"/>

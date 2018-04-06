@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14101" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Znv-Bs-J5q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Znv-Bs-J5q">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,23 +19,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tTd-Bl-ron">
-                                <rect key="frame" x="128" y="572" width="150" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="640-pw-f9K">
-                                <rect key="frame" x="245" y="456" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="daR-84-khk">
+                                <rect key="frame" x="0.0" y="302" width="374" height="83"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CFc-VH-LHt">
+                                        <rect key="frame" x="47" y="66" width="280.5" height="2"/>
+                                    </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n23-0Z-Z9Z">
+                                        <rect key="frame" x="166" y="15" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="CFc-VH-LHt" firstAttribute="width" secondItem="daR-84-khk" secondAttribute="width" multiplier="3:4" id="7GQ-e3-o5C"/>
+                                    <constraint firstItem="n23-0Z-Z9Z" firstAttribute="centerX" secondItem="daR-84-khk" secondAttribute="centerX" id="A3v-8M-stO"/>
+                                    <constraint firstItem="CFc-VH-LHt" firstAttribute="centerX" secondItem="daR-84-khk" secondAttribute="centerX" id="Mjj-ZU-bCB"/>
+                                    <constraint firstItem="n23-0Z-Z9Z" firstAttribute="top" secondItem="daR-84-khk" secondAttribute="top" constant="15" id="NE0-cv-HnO"/>
+                                    <constraint firstAttribute="bottom" secondItem="CFc-VH-LHt" secondAttribute="bottom" constant="15" id="PmP-WJ-2aZ"/>
+                                    <constraint firstItem="n23-0Z-Z9Z" firstAttribute="centerX" secondItem="daR-84-khk" secondAttribute="centerX" id="Tlv-y4-P2b"/>
+                                    <constraint firstItem="CFc-VH-LHt" firstAttribute="top" secondItem="n23-0Z-Z9Z" secondAttribute="bottom" constant="30" id="sK1-js-8fH"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="daR-84-khk" firstAttribute="centerY" secondItem="mUs-oa-CDY" secondAttribute="centerY" id="06q-jB-uba"/>
+                            <constraint firstItem="daR-84-khk" firstAttribute="centerX" secondItem="mUs-oa-CDY" secondAttribute="centerX" id="eNN-0x-TEJ"/>
+                            <constraint firstItem="daR-84-khk" firstAttribute="leading" secondItem="3Be-6l-8s8" secondAttribute="leading" id="rsh-jF-cgT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mUs-oa-CDY"/>
                     </view>
                     <connections>
-                        <outlet property="value" destination="tTd-Bl-ron" id="PaY-ck-lj6"/>
+                        <outlet property="value" destination="CFc-VH-LHt" id="VzF-BW-Lah"/>
+                        <outlet property="valueLabel" destination="n23-0Z-Z9Z" id="8PK-xU-ERi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfn-CG-9wX" userLabel="First Responder" sceneMemberID="firstResponder"/>

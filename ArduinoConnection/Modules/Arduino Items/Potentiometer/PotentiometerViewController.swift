@@ -11,6 +11,7 @@ import CoreBluetooth
 
 class PotentiometerViewController: UIViewController, CBPeripheralManagerDelegate {
 
+    @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var value: UIProgressView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,7 @@ class PotentiometerViewController: UIViewController, CBPeripheralManagerDelegate
                     return
                 }
                 self.value.setProgress(Float(min(resultValue - 30, 970))/970, animated: true)
+                self.valueLabel.text = "\(resultValue)"
             }
             
         }

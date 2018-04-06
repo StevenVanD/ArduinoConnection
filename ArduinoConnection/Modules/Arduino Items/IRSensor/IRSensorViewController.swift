@@ -11,6 +11,7 @@ import CoreBluetooth
 
 class IRSensorViewController: UIViewController, CBPeripheralManagerDelegate {
 
+    @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var value: UIProgressView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,7 @@ class IRSensorViewController: UIViewController, CBPeripheralManagerDelegate {
                     return
                 }
                 self.value.setProgress(Float(min(resultValue-100, 500))/500, animated: true)
+                self.valueLabel.text = "\(resultValue)"
             }
             
         }
