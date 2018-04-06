@@ -1,0 +1,15 @@
+/* 
+  Uitbreidingen.strings
+  ArduinoConnection
+
+  Created by Steven Van Durm on 6/04/18.
+  Copyright © 2018 Steven Van Durm. All rights reserved.
+*/
+
+
+// Voor de items 1 VC met daaring een containerview in een scrollview (zodat als de inhoud te groot is, het automatisch kan scrollen)
+
+// Laat het basseren op pinnen en laat men zelf alles maken (er kan een scherm zijn waarin men een pin toekent aan een soort object, zodat er geen 2 verschillende objecten op 1 pin kunnen zitten
+
+//scherm om items toe te voegen.
+//huidige pin lijst

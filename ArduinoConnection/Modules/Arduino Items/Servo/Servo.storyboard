@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ghS-Nt-IyL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Servo View Controller-->
+        <scene sceneID="RrC-ML-ADz">
+            <objects>
+                <viewController id="ghS-Nt-IyL" customClass="ServoViewController" customModule="ArduinoConnection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KPP-tw-8rq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bO-7N-zjT">
+                                <rect key="frame" x="0.0" y="228" width="375" height="210"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGh-8v-Bee">
+                                        <rect key="frame" x="70.5" y="55" width="47" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="icO-af-6eJ" customClass="NoPasteTextfield" customModule="ArduinoConnection" customModuleProvider="target">
+                                        <rect key="frame" x="256.5" y="50" width="50" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="3EW-gd-Sss"/>
+                                            <constraint firstAttribute="height" constant="30" id="S8F-db-5Zh"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <connections>
+                                            <action selector="textFieldValueChanged:" destination="ghS-Nt-IyL" eventType="editingChanged" id="Dx0-5c-HaI"/>
+                                            <outlet property="delegate" destination="ghS-Nt-IyL" id="erV-71-Pam"/>
+                                        </connections>
+                                    </textField>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="90" minValue="0.0" maxValue="180" translatesAutoresizingMaskIntoConstraints="NO" id="FY5-oa-RUx">
+                                        <rect key="frame" x="23" y="130" width="329" height="31"/>
+                                        <connections>
+                                            <action selector="changeRotation:" destination="ghS-Nt-IyL" eventType="touchUpOutside" id="QGK-2O-n9i"/>
+                                            <action selector="changeRotation:" destination="ghS-Nt-IyL" eventType="touchUpInside" id="sCf-cQ-Qa4"/>
+                                            <action selector="sliderValueChanged:" destination="ghS-Nt-IyL" eventType="valueChanged" id="FGg-p4-Sxg"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="icO-af-6eJ" firstAttribute="top" secondItem="1bO-7N-zjT" secondAttribute="top" constant="50" id="1Wz-fO-oLn"/>
+                                    <constraint firstItem="FY5-oa-RUx" firstAttribute="leading" secondItem="1bO-7N-zjT" secondAttribute="leading" constant="25" id="60O-fH-Y3C"/>
+                                    <constraint firstAttribute="trailing" secondItem="FY5-oa-RUx" secondAttribute="trailing" constant="25" id="Df8-EJ-Cm3"/>
+                                    <constraint firstItem="lGh-8v-Bee" firstAttribute="centerX" secondItem="1bO-7N-zjT" secondAttribute="centerX" multiplier="1/2" id="FLE-cS-C3n"/>
+                                    <constraint firstItem="icO-af-6eJ" firstAttribute="centerX" secondItem="1bO-7N-zjT" secondAttribute="centerX" multiplier="3/2" id="KdH-6E-GbH"/>
+                                    <constraint firstAttribute="bottom" secondItem="FY5-oa-RUx" secondAttribute="bottom" constant="50" id="OiS-p2-9FL"/>
+                                    <constraint firstItem="FY5-oa-RUx" firstAttribute="top" secondItem="icO-af-6eJ" secondAttribute="bottom" constant="50" id="SWn-cS-Jax"/>
+                                    <constraint firstItem="lGh-8v-Bee" firstAttribute="centerY" secondItem="icO-af-6eJ" secondAttribute="centerY" id="jCv-Da-kZc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1bO-7N-zjT" firstAttribute="leading" secondItem="OOa-KG-nmm" secondAttribute="leading" id="0OU-jo-P8i"/>
+                            <constraint firstItem="1bO-7N-zjT" firstAttribute="trailing" secondItem="OOa-KG-nmm" secondAttribute="trailing" id="ZhN-8g-0mh"/>
+                            <constraint firstItem="1bO-7N-zjT" firstAttribute="centerY" secondItem="KPP-tw-8rq" secondAttribute="centerY" id="yp1-IN-uhd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OOa-KG-nmm"/>
+                    </view>
+                    <connections>
+                        <outlet property="valueTextField" destination="icO-af-6eJ" id="HAN-FZ-1wg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z1K-cO-EL4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61.600000000000001" y="86.806596701649184"/>
+        </scene>
+    </scenes>
+</document>

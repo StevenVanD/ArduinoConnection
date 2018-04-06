@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="akQ-91-CXg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Motor View Controller-->
+        <scene sceneID="lfZ-GJ-2gl">
+            <objects>
+                <viewController id="akQ-91-CXg" customClass="MotorViewController" customModule="ArduinoConnection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nk5-7m-SmL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iWh-2W-Qht">
+                                <rect key="frame" x="0.0" y="188" width="375" height="291"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="255" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="oic-3B-DNU">
+                                        <rect key="frame" x="48" y="211" width="279" height="31"/>
+                                        <connections>
+                                            <action selector="changedSliderPosition:" destination="akQ-91-CXg" eventType="valueChanged" id="l0S-gs-10F"/>
+                                            <action selector="sliderValueChanged:" destination="akQ-91-CXg" eventType="touchUpOutside" id="4sQ-nH-DmZ"/>
+                                            <action selector="sliderValueChanged:" destination="akQ-91-CXg" eventType="touchUpInside" id="t2h-OH-9GJ"/>
+                                        </connections>
+                                    </slider>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wZv-G0-bxN">
+                                        <rect key="frame" x="257.5" y="50" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchMotorState:" destination="akQ-91-CXg" eventType="valueChanged" id="KKf-de-VTr"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq6-c2-vMV">
+                                        <rect key="frame" x="70.5" y="135.5" width="47" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AcM-zB-SU3" customClass="NoPasteTextfield" customModule="ArduinoConnection" customModuleProvider="target">
+                                        <rect key="frame" x="256.5" y="131" width="50" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="SHC-cc-LqY"/>
+                                            <constraint firstAttribute="height" constant="30" id="aYU-fq-z1t"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <connections>
+                                            <action selector="textfieldValueChanged:" destination="akQ-91-CXg" eventType="editingChanged" id="Zz1-JB-Joe"/>
+                                            <outlet property="pasteDelegate" destination="akQ-91-CXg" id="2oM-vV-P58"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ON / OFF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtb-L6-aVI">
+                                        <rect key="frame" x="70.5" y="55" width="71" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="uq6-c2-vMV" firstAttribute="centerY" secondItem="AcM-zB-SU3" secondAttribute="centerY" id="2sR-AF-BW1"/>
+                                    <constraint firstItem="jtb-L6-aVI" firstAttribute="leading" secondItem="uq6-c2-vMV" secondAttribute="leading" id="7fk-vD-XNt"/>
+                                    <constraint firstAttribute="bottom" secondItem="oic-3B-DNU" secondAttribute="bottom" constant="50" id="951-1x-0Yk"/>
+                                    <constraint firstItem="jtb-L6-aVI" firstAttribute="centerY" secondItem="wZv-G0-bxN" secondAttribute="centerY" id="9f2-kD-xNf"/>
+                                    <constraint firstItem="uq6-c2-vMV" firstAttribute="centerX" secondItem="iWh-2W-Qht" secondAttribute="centerX" multiplier="1/2" id="Gpx-qv-gWQ"/>
+                                    <constraint firstItem="oic-3B-DNU" firstAttribute="centerX" secondItem="iWh-2W-Qht" secondAttribute="centerX" id="Po9-JS-vgL"/>
+                                    <constraint firstItem="oic-3B-DNU" firstAttribute="top" secondItem="AcM-zB-SU3" secondAttribute="bottom" constant="50" id="Qt7-bx-w7T"/>
+                                    <constraint firstItem="AcM-zB-SU3" firstAttribute="centerX" secondItem="iWh-2W-Qht" secondAttribute="centerX" multiplier="3/2" id="ZYv-aL-FxM"/>
+                                    <constraint firstAttribute="trailing" secondItem="oic-3B-DNU" secondAttribute="trailing" constant="50" id="dGy-fc-1KQ"/>
+                                    <constraint firstItem="AcM-zB-SU3" firstAttribute="top" secondItem="wZv-G0-bxN" secondAttribute="bottom" constant="50" id="ePU-jW-WGL"/>
+                                    <constraint firstItem="wZv-G0-bxN" firstAttribute="top" secondItem="iWh-2W-Qht" secondAttribute="top" constant="50" id="jdh-AD-mHd"/>
+                                    <constraint firstItem="wZv-G0-bxN" firstAttribute="trailing" secondItem="AcM-zB-SU3" secondAttribute="trailing" id="lsA-aj-tkN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iWh-2W-Qht" firstAttribute="leading" secondItem="L1J-N2-05J" secondAttribute="leading" id="AU3-wG-bbX"/>
+                            <constraint firstItem="iWh-2W-Qht" firstAttribute="centerY" secondItem="Nk5-7m-SmL" secondAttribute="centerY" id="Fbl-ct-hDE"/>
+                            <constraint firstItem="iWh-2W-Qht" firstAttribute="centerX" secondItem="Nk5-7m-SmL" secondAttribute="centerX" id="JbN-iz-6DA"/>
+                            <constraint firstItem="L1J-N2-05J" firstAttribute="trailing" secondItem="iWh-2W-Qht" secondAttribute="trailing" id="VC0-rj-kln"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="L1J-N2-05J"/>
+                    </view>
+                    <connections>
+                        <outlet property="speedSlider" destination="oic-3B-DNU" id="UR0-nd-gIE"/>
+                        <outlet property="valueTextField" destination="AcM-zB-SU3" id="6BG-tc-RKQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3pP-4C-N9k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-194.40000000000001" y="-230.73463268365819"/>
+        </scene>
+    </scenes>
+</document>

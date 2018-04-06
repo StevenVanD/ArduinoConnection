@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qf0-3i-Mde">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Buzzer View Controller-->
+        <scene sceneID="ybo-9z-fsO">
+            <objects>
+                <viewController id="qf0-3i-Mde" customClass="BuzzerViewController" customModule="ArduinoConnection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o6p-gU-wdP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOz-xt-frO">
+                                <rect key="frame" x="19" y="257" width="337" height="152"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qeD-6n-E5h">
+                                <rect key="frame" x="20" y="258.5" width="335" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="A4" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gho-WZ-3UD">
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="150"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="A">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.75648197429999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playANote:" destination="qf0-3i-Mde" eventType="touchDown" id="CtJ-qd-nVP"/>
+                                            <action selector="resetBuzzer:" destination="qf0-3i-Mde" eventType="touchUpInside" id="IH8-kJ-Jbc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="B4" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krS-AN-5S8">
+                                        <rect key="frame" x="48" y="0.0" width="47.5" height="150"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75648197429999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="B">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playANote:" destination="qf0-3i-Mde" eventType="touchDown" id="DhS-pa-NEv"/>
+                                            <action selector="resetBuzzer:" destination="qf0-3i-Mde" eventType="touchUpInside" id="sbX-bH-ehE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="C4" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3f9-3I-alP">
+                                        <rect key="frame" x="95.5" y="0.0" width="48" height="150"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="C">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.75648197429999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playANote:" destination="qf0-3i-Mde" eventType="touchDown" id="PkZ-Fh-tMb"/>
+                                            <action selector="resetBuzzer:" destination="qf0-3i-Mde" eventType="touchUpInside" id="k1L-v2-rVa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="D4" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eig-ja-3PX">
+                                        <rect key="frame" x="143.5" y="0.0" width="48" height="150"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75648197429999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="D">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playANote:" destination="qf0-3i-Mde" eventType="touchDown" id="7aO-Wz-CDH"/>
+                                            <action selector="resetBuzzer:" destination="qf0-3i-Mde" eventType="touchUpInside" id="gxV-AL-lM6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="E4" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhE-0n-Ky7">
+                                        <rect key="frame" x="191.5" y="0.0" width="48" height="150"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="E">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.75648197429999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playANote:" destination="qf0-3i-Mde" eventType="touchDown" id="j1v-Te-9n9"/>
+                                            <action selector="resetBuzzer:" destination="qf0-3i-Mde" eventType="touchUpInside" id="BYS-Mh-yqR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="F4" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vp-Fn-4qg">
+                                        <rect key="frame" x="239.5" y="0.0" width="47.5" height="150"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75648197429999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="F">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playANote:" destination="qf0-3i-Mde" eventType="touchDown" id="ADw-Y5-W7d"/>
+                                            <action selector="resetBuzzer:" destination="qf0-3i-Mde" eventType="touchUpInside" id="Xmf-BR-qZ3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="G4" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMM-y3-aPH">
+                                        <rect key="frame" x="287" y="0.0" width="48" height="150"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="G">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.75648197429999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playANote:" destination="qf0-3i-Mde" eventType="touchDown" id="Dbu-aN-3Xn"/>
+                                            <action selector="resetBuzzer:" destination="qf0-3i-Mde" eventType="touchUpInside" id="aSZ-Zl-SZ8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qeD-6n-E5h" secondAttribute="height" multiplier="67:30" id="law-Gs-3Xw"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qeD-6n-E5h" firstAttribute="centerY" secondItem="o6p-gU-wdP" secondAttribute="centerY" id="9GS-rP-Mzv"/>
+                            <constraint firstItem="oOz-xt-frO" firstAttribute="centerX" secondItem="o6p-gU-wdP" secondAttribute="centerX" id="A6j-zX-uI8"/>
+                            <constraint firstItem="qeD-6n-E5h" firstAttribute="trailing" secondItem="oOz-xt-frO" secondAttribute="trailing" constant="-1" id="TXp-Wh-MCn"/>
+                            <constraint firstItem="oOz-xt-frO" firstAttribute="top" secondItem="qeD-6n-E5h" secondAttribute="top" constant="-1" id="Xr8-nN-EBc"/>
+                            <constraint firstItem="qeD-6n-E5h" firstAttribute="centerX" secondItem="o6p-gU-wdP" secondAttribute="centerX" id="kVm-Rs-vjg"/>
+                            <constraint firstItem="oOz-xt-frO" firstAttribute="centerY" secondItem="o6p-gU-wdP" secondAttribute="centerY" id="lmR-IX-8kp"/>
+                            <constraint firstItem="qeD-6n-E5h" firstAttribute="leading" secondItem="Gh7-LE-wF7" secondAttribute="leading" constant="20" id="wpV-Sk-CAx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gh7-LE-wF7"/>
+                    </view>
+                    <connections>
+                        <outlet property="notesStackView" destination="qeD-6n-E5h" id="wIT-LZ-xFa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gx1-gg-CFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="183"/>
+        </scene>
+    </scenes>
+</document>
